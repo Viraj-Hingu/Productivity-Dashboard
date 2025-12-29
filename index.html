@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="conatin-nav">
+
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <h2>Productivity Dashboard</h2>
+            <button class="theme-btn">Change Theme</button>
+        </nav>
+
+    </div>
+    <!-- DASHBOARD -->
+    <div class="dashboard">
+
+        <!-- HERO -->
+        <section class="hero">
+            <div>
+                <h3></h3>
+                <h1></h1>
+                <p></p>
+            </div>
+
+            <div class="weather">
+                <h1></h1>
+                <p></p>
+                <span class="hum"></span><br>
+                <span class="wind"></span>
+            </div>
+        </section>
+
+        <!-- FEATURES -->
+        <section class="features">
+            <div class="feature-card a" data-target="todo">To-Do List</div>
+            <div class="feature-card  b" data-target="planner">Daily Planner</div>
+            <div class="feature-card c" data-target="motivation">Motivation</div>
+            <div class="feature-card d" data-target="pomodoro">Pomodoro</div>
+
+            <div class="feature-card e" data-target="goals">Daily Goals</div>
+        </section>
+
+    </div>
+
+
+
+    <!-- TO DO -->
+    <section class="full-page" id="todo">
+        <div class="page-header">
+            <h2>Your Personalised Task List</h2>
+            <button class="close-btn">Close</button>
+        </div>
+
+        <div class="todo-layout">
+            <div class="todo-form">
+                <h3>Add Task</h3>
+                <input type="text" placeholder="Task title">
+                <textarea placeholder="Task details"></textarea>
+                    <button class="primary-btn">Add Task</button>
+            </div>
+
+            <div class="todo-list">
+            </div>
+        </div>
+    </section>
+
+    <!-- DAILY PLANNER -->
+    <section class="full-page" id="planner">
+        <div class="page-header">
+            <h2>Daily Planner</h2>
+            <button class="close-btn">Close</button>
+        </div>
+
+        <div class="todo-list planner-list">
+            <div class="planner-card">
+                <h4>06:00 AM</h4>
+                <input type="text" placeholder="Enter task" />
+            </div>
+
+            <div class="planner-card">
+                <h4>07:00 AM</h4>
+                <input type="text" placeholder="Enter task" />
+            </div>
+        </div>
+    </section>
+
+
+    <!-- MOTIVATION -->
+    <section class="full-page" id="motivation">
+        <div class="page-header">
+            <h2>Quote of the Day</h2>
+            <button class="close-btn">Close</button>
+        </div>
+        <div class="conatiner">
+            <div class="card">
+                <div class="inner-card">
+                    <h4></h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POMODORO -->
+    <section class="full-page" id="pomodoro">
+        <div class="page-header">
+            <h2>Pomodoro Timer</h2>
+            <button class="close-btn">Close</button>
+        </div>
+
+        <div class="pomodoro">
+            <h1>25:00</h1>
+            <div class="pomo-buttons">
+                <button class="st">Start</button>
+                <button class="pu">Pause</button>
+                <button class="reset">Reset</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- DAILY GOALS -->
+    <section class="full-page" id="goals">
+        <div class="page-header">
+            <h2>Daily Goals</h2>
+            <div class="addtask">
+                <input type="text" placeholder="Write your task here">
+                <button>Add task</button>
+            </div>
+            <button class="close-btn">Close</button>
+        </div>
+
+        <div class="todo-list dpalnner">
+            <div class="task-card"></div>
+        </div>
+    </section>
+
+    <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
