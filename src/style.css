@@ -1,0 +1,610 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+:root {
+    --bg: #3d79a4;
+    --danger: #888bb6;
+    --card: #6d9dc5ff;
+    --accena: #7daad0;
+    --text: white;
+    --cardtext: #7daad0;
+}
+
+.conatin-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.navbar {
+    position: fixed;
+    top: 10px;
+    width: 93%;
+    padding: 20px 40px;
+    background: var(--card);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-radius: 20px;
+    font-family: navandcard;
+
+}
+
+.theme-btn {
+    background: var(--text);
+    color: var(--bg);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: navandcard;
+
+}
+
+@font-face {
+    font-family: allcard;
+    src: url("/assets/AeonikTRIAL-Light.otf");
+}
+
+@font-face {
+    font-family: dashbord;
+    src: url("./assets/Losera-LVDDD.ttf");
+}
+
+@font-face {
+    font-family: navandcard;
+    src: url("./assets/MomentumRegular-8ODD2.otf");
+}
+
+@font-face {
+    font-family: roseme;
+    src: url("./assets/RosmieBold-Zprxx.otf");
+}
+
+/* DASHBOARD */
+.dashboard {
+    padding-top: 120px;
+    font-family: dashbord;
+
+}
+
+/* HERO */
+.hero {
+    margin: 0 40px;
+    padding: 40px;
+    background: linear-gradient(to right, #5b3519, #381c0a);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    background-position: center;
+    background-size: cover;
+}
+
+.hero h1 {
+    font-size: 48px;
+
+}
+
+.hero p {
+    font-size: 2.5rem;
+    color: var(--text);
+}
+
+.weather {
+    text-align: right;
+    color: var(--text);
+}
+
+.hero {
+    background: url("assets/download.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* FEATURES */
+.features {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    height: 300px;
+
+    border-radius: 16px;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+    font-family: 'Times New Roman', Times, serif;
+    font-family: roseme;
+
+}
+
+.a {
+    background: url("assets/todolist.jpg");
+    background-position: center;
+    background-size: cover;
+    color: var(--cardtext);
+
+}
+
+.b {
+    background: url("assets/dailyplanner.jpg");
+    background-position: center;
+    background-size: cover;
+    color: var(--cardtext);
+}
+
+.c {
+    background: url("assets/motivation.jpg");
+    background-position: center;
+    background-size: cover;
+    color: var(--cardtext);
+}
+
+.d {
+    background: url("assets/pomodoro.jpg");
+    background-position: center;
+    background-size: cover;
+    color: var(--cardtext);
+}
+
+.e {
+    background: url("assets/daily\ goals.jpg");
+    background-position: center;
+    background-size: cover;
+    color: var(--cardtext);
+}
+
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+/* FULL PAGES */
+.full-page {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 999;
+    padding: 10px 15px 0 15px;
+    font-family: allcard;
+}
+
+.full-page.active {
+    display: block;
+}
+
+/* HEADER */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    background: var(--danger);
+    border: none;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: allcard;
+    font-weight: 500;
+}
+
+/* TODO */
+.todo-layout {
+    margin-top: 40px;
+    display: flex;
+    gap: 32px;
+    align-items: stretch;
+}
+
+
+/* LEFT: FORM */
+.todo-form {
+    width: 32%;
+    min-width: 280px;
+    background: var(--card);
+    padding: 28px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.todo-form h3 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+
+.todo-form input,
+.todo-form textarea {
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.todo-form input::placeholder,
+.todo-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    font-family: allcard;
+}
+
+.todo-form input:focus,
+.todo-form textarea:focus {
+    box-shadow: 0 0 0 2px var(--accent);
+}
+
+.todo-form textarea {
+    min-height: 130px;
+    resize: none;
+}
+
+
+/* button */
+.primary-btn {
+    margin-top: 10px;
+    background: var(--text);
+    border: none;
+    padding: 14px;
+    font-family: allcard;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+
+.primary-btn:active {
+    transform: scale(0.98);
+}
+
+/* RIGHT: LIST */
+.todo-list {
+    flex: 1;
+    background: var(--card);
+    border-radius: 20px;
+    padding: 24px;
+    display: grid;
+    gap: 18px;
+    align-content: start;
+    height: 380px;
+    overflow: auto;
+}
+
+
+.todo-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .todo-layout {
+        flex-direction: column;
+    }
+
+    .todo-form {
+        width: 100%;
+    }
+
+    .todo-list {
+        height: 420px;
+    }
+}
+
+.empty {
+    font-size: 24px;
+    opacity: 0.6;
+}
+
+/* OTHER PAGES */
+.placeholder {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 28px;
+    opacity: 0.7;
+}
+
+.big {
+    font-size: 36px;
+}
+
+.dpalnner {
+    margin-top: 20px;
+    height: 420px;
+}
+
+.task-card button {
+    height: 3rem;
+    width: 120px;
+    font-size: 1rem;
+    border-radius: 15px;
+    background-color: green;
+    border: none;
+    color: var(--text);
+
+}
+
+.pomodoro {
+    margin-top: 80px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.pomodoro h1 {
+    font-size: 120px;
+}
+
+.pomo-buttons button {
+    margin: 10px;
+    padding: 14px 30px;
+    font-size: 22px;
+    background: var(--text);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 0 7px rgb(78, 76, 76);
+    font-family: allcard;
+
+}
+
+.pomo-buttons button:hover {
+    transform: scale(0.95);
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+}
+
+.task-card {
+    background: var(--bg);
+    padding: 20px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    word-wrap: break-word;
+    min-height: 100px;
+
+}
+
+.notask {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.addtask {
+    display: flex;
+    gap: 10px;
+}
+
+.addtask input {
+    width: 350px;
+    height: 40px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.126);
+    border: none;
+    color: white;
+    padding-left: 10px;
+    font-size: 1.1rem;
+    font-family: allcard;
+    border-radius: 10px;
+}
+
+.addtask input::placeholder {
+    color: white;
+}
+
+
+.addtask button {
+    height: 40px;
+    width: 100px;
+    background-color: var(--card);
+    color: var(--text);
+    border: none;
+    font-size: 1rem;
+    border-radius: 10px;
+    font-family: allcard;
+}
+
+.conatiner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    overflow: hidden;
+
+}
+
+
+.card {
+    width: 500px;
+    height: 300px;
+    background-color: var(--card);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.inner-card {
+    width: 450px;
+    height: 260px;
+    background-color: var(--danger);
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.inner-card h4 {
+    font-size: 1.5rem;
+    padding: 10px;
+    word-break: break-word;
+
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.done-btn {
+    background: #0f9d58;
+    /* green */
+    border: none;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.done-btn:hover {
+    background: #0b7d45;
+}
+
+/* Planner style cards */
+.planner-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+    height: 410px;
+    overflow-y: auto;
+    /* ✅ required */
+    overflow-x: hidden;
+}
+
+/* Card layout remains same */
+.planner-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Time text — unchanged */
+.planner-card h4 {
+    min-width: 90px;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+/* Input — layout-safe */
+.planner-card input {
+    width: 100%;
+    max-width: 500px;
+    /* ✅ your requirement */
+    padding: 14px 18px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .planner-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .planner-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .planner-card h4 {
+        min-width: unset;
+    }
+
+    .planner-card input {
+        max-width: 100%;
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .planner-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .planner-card input {
+        width: 100%;
+    }
+}
+
+
+.task-card h4 {
+    font-size: 30px;
+    line-height: 1.4;
+    word-break: normal;
+    white-space: normal;
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .todo-layout {
+        flex-direction: column;
+    }
+
+    .todo-form,
+    .todo-list {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+}
