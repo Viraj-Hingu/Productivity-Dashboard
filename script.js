@@ -201,6 +201,7 @@ async function heroSectionWeather() {
     const stateEl = document.querySelector(".weather p");
     const humidityEl = document.querySelector(".weather .hum");
     const windEl = document.querySelector(".weather .wind");
+    let hero = document.querySelector(".hero");
 
     const API_KEY = API_KEYS.weatherapi;
     const CITY = "surat";
@@ -238,10 +239,35 @@ async function heroSectionWeather() {
             hour: "numeric",
             minute: "2-digit",
             second: "2-digit",
-            hour12: true
+            hour12: false
+
         });
 
+        if (now.getHours() >= 7 && now.getHours() < 9) {
+            hero.style.backgroundImage = "url('./assets/sunrise 7-9.jpg')";
+        }
+        else if (now.getHours() >= 9 && now.getHours() < 12) {
+            hero.style.backgroundImage = "url('./assets/4-7.jpg')";
+        }
+        else if (now.getHours() >= 12 && now.getHours() < 15) {
+            hero.style.backgroundImage = "url('./assets/morning 9-4.jpg')";
+        }
+        else if (now.getHours() >= 15 && now.getHours() < 20) {
+            hero.style.backgroundImage = "url('./assets/7-8.jpg')";
+        }
+        else {
+            hero.style.backgroundImage = "url('./assets/8 to fullnight.jpg')";
+        }
+
+
+
+
+
+
+
         document.querySelector(".hero h1").innerHTML = time;
+
+
 
     }
 
@@ -256,12 +282,11 @@ heroSectionWeather();
 
 
 function changethem() {
-    let themebtn = document.querySelector(".theme-btn");
-    let index = 0;
+    const themebtn = document.querySelector(".theme-btn");
+    const root = document.documentElement;
 
     const themes = [
         {
-            name: "Ocean Night",
             bg: "#0a1f2b",
             card: "#123344",
             accent: "#4dd0e1",
@@ -270,7 +295,6 @@ function changethem() {
             cardtext: "#7fafb6ff"
         },
         {
-            name: "Midnight Purple",
             bg: "#1b102b",
             card: "#2d1a4a",
             accent: "#9b5de5",
@@ -279,7 +303,6 @@ function changethem() {
             cardtext: "#9e85b8ff"
         },
         {
-            name: "Forest Dark",
             bg: "#0f1f17",
             card: "#1e3a2f",
             accent: "#52b788",
@@ -288,7 +311,6 @@ function changethem() {
             cardtext: "#96b374ff"
         },
         {
-            name: "Cyber Neon",
             bg: "#0d0d0d",
             card: "#1a1a1a",
             accent: "#00f5d4",
@@ -297,40 +319,49 @@ function changethem() {
             cardtext: "#7092b5ff"
         },
         {
-            name: "Light Minimal",
             bg: "#f5f5f5",
             card: "#ffffff",
             accent: "#3a86ff",
             text: "#1c1c1c",
             danger: "#e63946",
             cardtext: "#1c1c1c"
-
         }
     ];
 
+    // 🔹 index localStorage se lo
+    let index = Number(localStorage.getItem("themeIndex")) || 0;
 
-    let rootElement = document.documentElement;
+    // 🔹 Apply function
+    function applyTheme(i) {
+        const t = themes[i];
+        root.style.setProperty("--bg", t.bg);
+        root.style.setProperty("--card", t.card);
+        root.style.setProperty("--accent", t.accent);
+        root.style.setProperty("--text", t.text);
+        root.style.setProperty("--danger", t.danger);
+        root.style.setProperty("--cardtext", t.cardtext);
+    }
 
+    // 🔹 Page load pe theme apply
+    applyTheme(index);
+
+    // 🔹 Button click
     themebtn.addEventListener("click", () => {
-        index++;
-
-        if (index >= themes.length) {
-            index = 0;
+        if (index < 4) {
+            index++
         }
+        else {
+            index = 0
+        }
+        console.log(index);
 
-        const theme = themes[index];
-
-        rootElement.style.setProperty("--bg", theme.bg);
-        rootElement.style.setProperty("--card", theme.card);
-        rootElement.style.setProperty("--accent", theme.accent);
-        rootElement.style.setProperty("--text", theme.text);
-        rootElement.style.setProperty("--danger", theme.danger);
-        rootElement.style.setProperty("--cardtext", theme.cardtext);
+        applyTheme(index);
+        localStorage.setItem("themeIndex", index);
     });
-
-
 }
+
 changethem();
+
 
 function dailyplannertask() {
     let Dplanner = document.querySelector(".dpalnner");
