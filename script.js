@@ -203,7 +203,7 @@ async function heroSectionWeather() {
     const windEl = document.querySelector(".weather .wind");
     let hero = document.querySelector(".hero");
 
-    const API_KEY = API_KEYS.weatherapi;
+    const API_KEY = import.meta.env.VITE_WEATHER_TOKEN;
     const CITY = "surat";
 
     const response = await fetch(
