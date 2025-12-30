@@ -1,4 +1,3 @@
-import { API_KEYS } from "./config.js";
 
 // Feature cards (dashboard buttons)
 const featureCards = document.querySelectorAll(".feature-card");
